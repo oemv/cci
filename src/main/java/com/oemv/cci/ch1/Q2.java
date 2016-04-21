@@ -6,6 +6,13 @@ import java.util.Map.Entry;
 
 public class Q2 {
 
+	/**
+	 * Check permutation: Given two strings, write a method to decide if one is
+	 * permutation of the other.
+	 * 
+	 */
+
+	// Solution using data structures( Optimizable using arrays)
 	public static boolean isPermutation(String a, String b) {
 
 		if (b.length() != a.length()) {
@@ -33,9 +40,38 @@ public class Q2 {
 		}
 
 		for (Entry<Character, Integer> each : source.entrySet()) {
-			if (each.getValue() > 0)
+			if (each.getValue() > 0) {
 				return false;
+			}
 		}
+		return true;
+	}
+
+	// Using arrays
+	public static boolean isPermutationArray(String a, String b) {
+		if (a.length() != b.length()) {
+			return false;
+		}
+
+		if (a.equals(b)) {
+			return true;
+		}
+
+		int[] letters = new int[128]; // assuming ASCII 7 bits charset
+
+		char[] s_array = a.toCharArray();
+		for (char c : s_array) {
+			letters[c]++;
+		}
+
+		for (int i = 0; i < b.length(); i++) {
+			int c = b.charAt(i);
+			letters[c]--;
+			if (letters[c] < 0) {
+				return false;
+			}
+		}
+
 		return true;
 	}
 

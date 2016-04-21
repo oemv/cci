@@ -9,6 +9,9 @@ public class Q2Test {
 	public void isPermutation() {
 		Assert.assertTrue(Q2.isPermutation("aaa", "aaa"));
 		Assert.assertTrue(Q2.isPermutation("aba", "baa"));
+
+		Assert.assertTrue(Q2.isPermutationArray("aaa", "aaa"));
+		Assert.assertTrue(Q2.isPermutationArray("aba", "baa"));
 	}
 
 	@Test
@@ -17,6 +20,11 @@ public class Q2Test {
 		Assert.assertFalse(Q2.isPermutation("aaa", "bbb"));
 		Assert.assertFalse(Q2.isPermutation("aa", "aab"));
 		Assert.assertFalse(Q2.isPermutation("aa", ""));
+
+		Assert.assertFalse(Q2.isPermutationArray("aaa", "a"));
+		Assert.assertFalse(Q2.isPermutationArray("aaa", "bbb"));
+		Assert.assertFalse(Q2.isPermutationArray("aa", "aab"));
+		Assert.assertFalse(Q2.isPermutationArray("aa", ""));
 	}
 
 }
