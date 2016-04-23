@@ -29,6 +29,7 @@ public class Q5 {
 		return edits < 2;
 	}
 
+	//Book solution 
 	public static boolean oneEditAway2(String first, String second) {
 		/* Length checks. */
 		if (Math.abs(first.length() - second.length()) > 1) {
