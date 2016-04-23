@@ -6,12 +6,6 @@ import java.util.Map.Entry;
 
 public class Q2 {
 
-	/**
-	 * Check permutation: Given two strings, write a method to decide if one is
-	 * permutation of the other.
-	 * 
-	 */
-
 	// Solution using data structures( Optimizable using arrays)
 	public static boolean isPermutation(String a, String b) {
 
