@@ -5,14 +5,7 @@ public class Q7 {
 	public static int[][] rotate(int[][] m) {
 		int length = m[0].length;
 		for (int i = 0; i < length / 2; i++) {
-			int size = length - i - 1;
-			for (int j = 0; j <= size / 2; j++) {
-				int temp = m[i][size - j];
-				m[i][size - j] = m[j][i];
-				m[j][i] = m[size][j];
-				m[size][j] = m[size - j][size];
-				m[size - j][size] = temp;
-			}
+	
 		}
 		return m;
 	}
