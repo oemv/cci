@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Q11 {
-	
+
 	public static <E> E getKthToLast(int k, LinkedList<E> list) {
 		int size = list.size();
 		if (null == list || list.isEmpty() || k >= size) {
@@ -22,6 +22,27 @@ public class Q11 {
 			}
 		}
 
+		return null;
+	}
+
+	public static <E> E getKthToLast_apis(int k, LinkedList<E> list) {
+		int size = list.size();
+		if (null == list || list.isEmpty() || k >= size) {
+			return null;
+		}
+		return list.get(size - k -1);
+	}
+
+	public static String printKthToLast(int i, int k, Iterator<String> it) {
+		if (i == k) {
+			return (it.next());
+		}
+
+		if (it.hasNext()) {
+			it.next();
+			printKthToLast(i + 1, k, it);
+		}
+		
 		return null;
 	}
 
