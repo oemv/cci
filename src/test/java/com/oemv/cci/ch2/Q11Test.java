@@ -12,29 +12,29 @@ public class Q11Test {
 	@Test
 	public void testPostToEnd1() {
 		LinkedList<String> list = new LinkedList<String>(asList(new String[] { "A", "B", "C", "D", "E", "F" }));
-		int result = Q11.posToEnd("E", list);
-		Assert.assertEquals(1, result);
+		String result = Q11.getKthToLast(1, list);
+		Assert.assertEquals("E", result);
 	}
 
 	@Test
 	public void testPostToEnd2() {
 		LinkedList<String> list = new LinkedList<String>(asList(new String[] { "A", "B", "C", "D", "E", "F" }));
-		int result = Q11.posToEnd("A", list);
-		Assert.assertEquals(5, result);
+		String result = Q11.getKthToLast(5, list);
+		Assert.assertEquals("A", result);
 	}
 
 	@Test
 	public void testFinalAlready() {
 		LinkedList<String> list = new LinkedList<String>(asList(new String[] { "A", "B", "C", "D", "E", "F" }));
-		int result = Q11.posToEnd("F", list);
-		Assert.assertEquals(0, result);
+		String result = Q11.getKthToLast(0, list);
+		Assert.assertEquals("F", result);
 	}
 
 	@Test
 	public void testNotFound() {
 		LinkedList<String> list = new LinkedList<String>(asList(new String[] { "A", "B", "C", "D", "E", "F" }));
-		int result = Q11.posToEnd("X", list);
-		Assert.assertEquals(-1, result);
+		String result = Q11.getKthToLast(10, list);
+		Assert.assertEquals(null, result);
 	}
 
 }

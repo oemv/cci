@@ -4,22 +4,25 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Q11 {
-	public static <E> int posToEnd(E e, LinkedList<E> list) {
-		if (null == list || null == e || list.isEmpty()) {
-			return 0;
+	
+	public static <E> E getKthToLast(int k, LinkedList<E> list) {
+		int size = list.size();
+		if (null == list || list.isEmpty() || k >= size) {
+			return null;
 		}
 
 		int i = 0;
-		int size = list.size();
 		Iterator<E> it = list.iterator();
 
 		while (it.hasNext()) {
 			i++;
-			if (e.equals(it.next())) {
-				return size - i;
+			E e = it.next();
+			if (i == (size - k)) {
+				return e;
 			}
 		}
 
-		return -1;
+		return null;
 	}
+
 }
